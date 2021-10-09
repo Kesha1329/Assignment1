@@ -24,7 +24,7 @@ var instruction = () => {
 };
 
 var start = () => {
-   rl.question("Enter Your Choice : ",(ans) => {
+   rl.question("\nEnter Your Choice : ",(ans) => {
     if(ans === "1"){
       createDirWizard();
     }
@@ -111,7 +111,7 @@ var writeFileData = () => {
       }
       else
       {
-        console.log(filename + ".txt File Created SuccessFully...");
+        console.log(filename + " File Created SuccessFully...");
       }
       repeat();
    });
@@ -124,7 +124,7 @@ var readFileWizard = () => {
          if(err){
             console.log(err);
          }else{
-           console.log("\n----" + filename + ".txt" + " ----\n");
+           console.log("\n----" + filename + ".txt" + "----\n");
             console.log(result);
          }
          repeat();
