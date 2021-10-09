@@ -11,7 +11,7 @@ var filename = "";
 var content = "";
 
 var instruction = () => {
-  console.log("\n====================== MAIN MENU ======================\n");
+  console.log("\n.............MAIN MENU.............\n");
    console.log("Enter 1. for Create  Directory.");
    console.log("Enter 2. for Remove Directory.");
    console.log("Enter 3. for Write File.");
@@ -32,7 +32,7 @@ var start = () => {
       removeDirWizard();
     }
     else if(ans === "3"){
-      createFileWizard();
+      writeFileWizard();
     }
     else if(ans === "4"){
       readFileWizard();
@@ -94,17 +94,17 @@ var removeDir = () => {
    });
 };
 
-var createFileWizard = () => {
+var writeFileWizard = () => {
   rl.question("Enter File Name : ",(ans) => {
       filename = ans + ".txt";
       rl.question("Enter File Content : ",(ans) => {
          content = ans;
-         createFileData();
+         writeFileData();
       });
   });
 };
 
-var createFileData = () => {
+var writeFileData = () => {
    fs.writeFile(filename,content,(err) => {
       if(err){
         console.log(err);
